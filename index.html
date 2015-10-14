@@ -46,14 +46,15 @@
 <p>UFITS comes with a wrapper script for ease of use.  On UNIX, you can call it by simply typing <code>ufits</code>, while on windows you need to type <code>ufits.py</code> (unless you have put the .py extension in your PATHEXT, directions <a href="http://stackoverflow.com/a/13023969/4386003">here</a>).</p>
 
 <pre><code>$ ufits.py
-Usage:      ufits &lt;command&gt; &lt;arguments&gt;
-version:    0.2.1
-
+Usage:      ufits <command> <arguments>
+version:    0.2.4
+    
 Command:    ion         pre-process Ion Torrent data (find barcodes, remove primers, trim/pad)
             illumina    pre-process folder of de-multiplexed Illumina data (gunzip, merge PE, remove primers, trim/pad)
             cluster     cluster OTUs (using UPARSE algorithm)
             filter      OTU table filtering
-            taxonomy    Assign taxonomy to OTUs      
+            taxonomy    Assign taxonomy to OTUs
+            summarize   Summarize Taxonomy (create stacked bar graph and data tables)   
             heatmap     Create heatmap from OTU table
 
 Setup:      download    Download Reference Databases
@@ -64,7 +65,7 @@ Setup:      download    Download Reference Databases
 
 <pre><code>$ ufits.py cluster
 Usage:      ufits cluster &lt;arguments&gt;
-version:    0.2.1
+version:    0.2.4
 
 Arguments:  -i, --fastq         Input FASTQ file (Required)
             -o, --out           Output base name. Default: out
@@ -149,7 +150,7 @@ ufits database -i sh_dynamic_01.08.2015.fasta -o UNITE --create_db utax
 
 <pre><code>$ ufits taxonomy
 Usage:      ufits taxonomy &lt;arguments&gt;
-version:    0.2.2
+version:    0.2.4
 
 Arguments:  -i, --fasta         Input FASTA file (i.e. OTUs from ufits cluster) (Required)
             -o, --out           Base name for output file. Default: ufits-taxonomy.&lt;method&gt;.txt
